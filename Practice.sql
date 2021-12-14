@@ -49,7 +49,7 @@ CREATE TRIGGER backupBookData
     ON Books
     FOR EACH ROW
 BEGIN
-    INSERT INTO DeletedBooks(ID_BOOK, NameBook, ID_THEME, ID_AUTHOR, Price, DrawingOfBook, Pages)
+    INSERT INTO DeletedBooks
     SELECT *
     FROM Books
     WHERE Books.ID_BOOK = OLD.ID_BOOK;
@@ -58,4 +58,4 @@ END;
 
 DELETE
 FROM Books
-WHERE ID_BOOK = 15;
+WHERE ID_BOOK = 14;
